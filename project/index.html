@@ -1,0 +1,20 @@
+<html>
+  <head></head>
+<body>
+<script src="bundle.js"></script>
+<script>
+
+async function main () {
+  var core = Hypercore()
+  await core.ready()
+  console.log(core)
+
+  await core.append('hello world')
+  await core.update()
+  console.log(await core.get(0))
+}
+
+main()
+</script>
+  </body>
+</html>
